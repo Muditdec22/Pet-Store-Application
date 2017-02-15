@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Pet Store</title>
+<!-- Load AngularJS -->
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"
+	type="text/javascript"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/deletePetController.js"></script>
+<link rel="stylesheet" type="text/css" href="css/table.css">
+<style>
+.button {
+	cursor: pointer;
+	display: block;
+	width: 115px;
+	height: 20px;
+	background: #4E9CAF;
+	padding: 10px;
+	text-align: center;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
+}
+</style>
+<head>
+<body ng-app="PetStore" ng-controller="DeletePetController">
+	<script type="text/ng-template" id="/index.html">
+    </script>
+	<div align="right">
+		<a href="/index.html">Home</a>
+	</div>
+	<div class="caption" align="center">Pet Inventory Maintenance</div>
+	<table id="table">
+		<tr>
+			<th>Pet Id</th>
+			<th>Pet Name</th>
+			<th>Pet Category</th>
+			<th>Pet Tag</th>
+			<th>Pet PhotoUrls</th>
+			<th>Pet Status</th>
+			<th>Actions</th>
+		</tr>
+
+		<tr ng-repeat="pet in pets">
+			<td>{{ pet.petId }}</td>
+			<td>{{ pet.petName }}</td>
+			<td>{{ pet.petCategory.categoryName }}</td>
+			<td>{{ pet.petTag.tagName }}</td>
+			<td>{{ pet.photoURLS }}</td>
+			<td>{{ pet.status }}</td>
+			<td><a ng-click="removePet( pet )" class="button">Remove</a></td>
+		</tr>
+
+	</table>
+
+</body>
+</html>
