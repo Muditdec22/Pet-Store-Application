@@ -37,5 +37,9 @@ CREATE TABLE T_TAGDETAILS
 --Day 0 Setup ---  
 Insert into T_PETCATEGORY (CATEGORY_ID,CATEGORY_NAME) values (1,'Dog');
 Insert into T_PETCATEGORY (CATEGORY_ID,CATEGORY_NAME) values (2,'Cat');
+
 Insert into T_TAGDETAILS (TAG_ID,TAG_NAME) values (1,'Tag1');
 Insert into T_TAGDETAILS (TAG_ID,TAG_NAME) values (2,'Tag2')
+
+Insert into T_USER (USER_ID,USER_NAME,USER_PASSWORD,USER_ROLE) values (1,'User','user','USER');
+Insert into T_USER (USER_ID,USER_NAME,USER_PASSWORD,USER_ROLE) values (2,'Admin','admin','ADMIN');
