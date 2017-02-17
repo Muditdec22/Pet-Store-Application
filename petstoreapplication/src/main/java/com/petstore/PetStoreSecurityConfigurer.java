@@ -40,7 +40,7 @@ class PetStoreSecurityConfigurer extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers(CommonConstants.VIEWPET_ACCESS, CommonConstants.SEARCHPET_ACCESS)
 				.permitAll().antMatchers(CommonConstants.ADDPET_ACCESS, CommonConstants.DELETEPET_ACCESS)
-				.hasAuthority(CommonConstants.ADMIN).anyRequest().authenticated().and().formLogin();
+				.hasAuthority(CommonConstants.ADMIN).anyRequest().authenticated().and().formLogin().and().logout();
 		http.csrf().disable();
 	}
 

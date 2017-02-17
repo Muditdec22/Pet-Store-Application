@@ -12,6 +12,8 @@ petStore.controller("AddPetController", [ '$scope', '$http',
 			$scope.petCategory = [];
 
 			$scope.petTag = [];
+			
+			$scope.successMessage = null;
 
 			_loadPetCategory();
 
@@ -40,8 +42,6 @@ petStore.controller("AddPetController", [ '$scope', '$http',
 			}
 
 			$scope.submitPet = function() {
-				console.log($scope.form);
-				console.log(angular.toJson($scope.form));
 				$http({
 					method : 'POST',
 					url : 'petStore/addPet',
@@ -54,6 +54,7 @@ petStore.controller("AddPetController", [ '$scope', '$http',
 
 			function _success(response) {
 				_clearForm();
+				$scope.successMessage = "Pet Details have been saved.";
 			}
 
 			function _error(response) {

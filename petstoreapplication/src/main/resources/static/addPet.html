@@ -17,8 +17,6 @@
 </style>
 <head>
 <body ng-app="PetStore" ng-controller="AddPetController">
-	<script type="text/ng-template" id="/index.html">
-    </script>
 	<div align="right">
 		<a href="/index.html">Home</a>
 	</div>
@@ -46,10 +44,12 @@
 		</div>
 		<div>
 			Pet PhotoUrls :<input type="text" ng-model="form.photoURLS" size="60" />
-			</td>
 		</div>
 		<div>
 			<input type="submit" value="Submit" />
+		</div>
+		<div align="center">
+			<font color="green">{{successMessage}}</font>
 		</div>
 	</form>
 

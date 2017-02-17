@@ -3,6 +3,10 @@ petStore.controller("DeletePetController", [ '$scope', '$http',
 		function($scope, $http) {
 			// Initialize page with default data which is blank in this example
 			$scope.pets = [];
+			
+			$scope.successMessage = null;
+			
+			$scope.deletePetId = null;
 
 			_refreshPageData();
 
@@ -18,6 +22,7 @@ petStore.controller("DeletePetController", [ '$scope', '$http',
 			}
 
 			$scope.removePet = function(pet) {
+				$scope.deletePetId = pet.petId;
 				$http({
 					method : 'DELETE',
 					url : 'petStore/deletePet/' + pet.petId
@@ -26,6 +31,7 @@ petStore.controller("DeletePetController", [ '$scope', '$http',
 
 			function _success(response) {
 				_refreshPageData();
+				$scope.successMessage = "Pet Details have been deleted for Pet Id : " + $scope.deletePetId;
 			}
 
 			function _error(response) {
